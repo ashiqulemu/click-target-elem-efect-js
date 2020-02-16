@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html>
-<body >
-  <style>
-  .cf{
-  background: pink;
-}  
-  </style>
-   <br>     <br>  
-
-   <button onclick="fuck(event)" class="p" >sadsadd</button> 
-   <button onclick="fuck(event)" class="p" >sadsadd</button>
- 
-<script>
+<head>
+	<style>
+		.common{
+		  padding: 10px;
+		  background: purple;
+		  width:50px;
+		  margin:5px;
+		}
+		.ok{
+		  border-bottom:5px solid red;
+		}
+	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
   
   
-   function fuck(event){ 
-    
-   let r =  document.querySelectorAll(".p"); 
-     
-     
+    <div class="drum">
       
-        for (var i = 0; i < r.length; ++i) {            
-          
-          if(r[i].classList.contains('cf')){   
-            
-            r[i].classList.remove('cf');
-           
-            
-          }
-        }
-     
-      event.target.classList.add('cf')
-       
-  }
- 
-</script>
+      <div class="common ok" onclick='call(event)'>
+        1
+      </div>
+  
+      <div class="common"  onclick='call(event)'>
+        2
+      </div>
+      
+    </div>
+  
 
+<script id="jsbin-javascript">
+function call(event){
+  
+   let items = document.querySelectorAll('.common');
+  
+     for(let i=0; i<items.length; i++){
+       
+      if(items[i].classList.contains("ok")){
+        items[i].classList.remove("ok")
+      }
+       
+     }
+  
+     event.target.classList.add("ok")
+  
+}
+</script>
 </body>
 </html>
